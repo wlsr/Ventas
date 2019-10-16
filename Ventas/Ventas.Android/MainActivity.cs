@@ -4,6 +4,7 @@
     using Android.Content.PM;
     using Android.OS;
     using Android.Runtime;
+    using ImageCircle.Forms.Plugin.Droid;
     using Plugin.CurrentActivity;
     using Plugin.Permissions;
 
@@ -16,10 +17,8 @@
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
-            CrossCurrentActivity.Current.Init(this, savedInstanceState); 
-            //el de abajo es lo mismo??
-            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            //
+            CrossCurrentActivity.Current.Init(this, savedInstanceState);
+            ImageCircleRenderer.Init();
             
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
